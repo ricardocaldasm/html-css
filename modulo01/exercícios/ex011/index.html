@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em HTML5</title>
+</head>
+<body>
+    <h1>Imagem dinâmica</h1>
+    <p>Tente abrir este site em vários dispositivos diferentes ou simplemente aumente ou diminua o tamanho do seu navegador.</p>
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/foto-m.png" type="image/png">
+        <!--tomar cuidado com a ordem das linhas do source - pequena, média e grande-->
+        <img src="imagens/foto-g.png" alt="Imagem flexível">
+    </picture>
+    <h1>Reproduzindo áudios</h1>
+    <p>Vamos aprender a reproduzir áudios em HTML5.</p>
+    <audio src="midia/sino.mp3" controls autoplay></audio> <!--maneira mais simples-->
+    <!--compatibilidade: .mp3, .wav, .ogg-->
+    <audio preload="metadata" autoplay controls><!--maneira completa-->
+        <source src="midia/assovio.mp3" type="audio/mpeg"> <!--arquivo wav muito pesado-->
+        <!--colocar outros tipos para tentar carregar: wav ou ogg. caso não consiga, escrever msg abaixo-->
+        <p>Infelizmente seu navegador não conegue reproduzir o áudio. <a href="midia/assovio.mp3">Clique aqui para baixar.</a></p>
+    </audio>
+    <h1>Reproduzindo videos</h1>
+    <!--compatibilidade: .mp4, .m4v, .webm, .ogg-->
+    <!--usar o handbreak.fr-->
+</body>
+</html>
