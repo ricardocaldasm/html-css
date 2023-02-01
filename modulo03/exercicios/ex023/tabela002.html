@@ -12,16 +12,30 @@
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative; /*configuração para congelar o cabeçalho*/
         }
         td, th {
             border: 1px solid black;
             padding: 10px;
         }
-        thead {
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
+        }
+        thead, tfoot {
             background-color: grey;
             color: white;
         }
-
+        thead > tr > th { /*configuração para congelar o cabeçalho*/
+            position: sticky;
+            top: -1px;
+            background-color: grey;
+        }
+        tbody > tr:nth-child(2n) { /*pode usar odd, even ou 2n-1*/
+            background-color: lightgray;
+        }
         .num{
             text-align: right;
         }
@@ -44,8 +58,8 @@
         <caption>População das Unidades Federativas</caption>
         <thead>
             <tr> <!--Table Row-->
-                <th>Estado</th> <!--Table Head-->
-                <th>População</th>
+                <th scope="col">Estado</th> <!--Table Head--> <!--scope: estado é um título da coluna-->
+                <th scope="col" style="width: 50px;">População</th> <!--configuração pontal de estilo-->
             </tr>
         </thead>
         <tbody>
@@ -61,10 +75,14 @@
                 <td>Rio de Janeiro</td>
                 <td class="num">16.615.526</td>
             </tr>
+            <tr>
+                <td>Bahia</td>
+                <td>14.016.906</td>
+            </tr>
         </tbody>
         <tfoot> <!--independente da linha que esteja escrita no código, se respeita a ordem thead, tbody, tfoot-->
             <tr>
-                <th>Total de Habitantes</th>
+                <th scope="row">Total de Habitantes</th> <!--título referente à mesma linha-->
                 <td class="num"><strong>83.373.123</strong></td>
             </tr>
         </tfoot>
