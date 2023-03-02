@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Meu primeiro formulário</h1>
+    <form action="cadastro.php" method="post" autocomplete="off"> <!-- autocomplete: desliga autopreenchimento - action: envia os dados de um formulário para um php-->
+        <p><label for="inome">Nome:</label> <input type="text" name="nome" id="inome"></p> <!--name mais útil para html e php e id para JS e label - no FOR se coloca o ID - coloca "i" antes do que for escrever no id para diferenciar - label para relacionar o que está escrito ao campo de preenchimento--> 
+        <p><label for="isobrenome">Sobrenome:</label> <input type="text" name="sobrenome" id="isobrenome"></p>
+        <p><input type="submit" value="Enviar"></p> <!--botão para envio de formulário-->
+    </form>
+</body>
+</html>
+
+<!--method: GET(padrão): coloca os dados na URL / e POST: não aparecem os dados na URL mas é possível capturar-->
+<!--get é só até 3000 bytes ou 3000 letras - google usa GET, é possível compartilhar a pesquisa feita-->
